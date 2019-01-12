@@ -1,0 +1,374 @@
+/******* google fonts ********/
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700');
+
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:400,500');
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700');
+
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+/***********browser reset styles **********/
+
+
+
+*,::before,::after
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/**********  body styles *********/
+
+body{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color:white  ;
+  //background-color: #EDEBF3;
+}
+
+/********  svg background container **********/
+.container
+{
+    height: 90vh;
+    width: 85vw;
+    margin: auto;
+    //background-image: url(../assets/images/bird1.svg);
+    //background-repeat: no-repeat;
+    //background-position: center;
+    //background-size: 20px;
+    position: relative;
+    display: flex;
+}
+
+
+/******** birds animation *********/
+#birds
+{
+    position:absolute;
+    top: 0;
+    left: 0;
+}
+.box
+{
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+    display: inline-block;
+    margin: 0px 5px;
+    transform: rotateZ(15deg);
+    animation: fly 5s ease-in-out infinite alternate-reverse;
+}
+
+.one
+{
+    background-image: url(../assets/images/bird1.svg);
+    animation-delay: 0s;
+    z-index: 11;
+    filter: blur(3px);
+    background-size: 40px;
+}
+.two
+{
+    background-image: url(../assets/images/bird2.svg);
+    animation-delay: 2s;
+    z-index: 22;
+    filter: blur(3px);
+
+}
+
+.three
+{
+    background-image: url(../assets/images/bird4.svg);
+    animation-delay: 1s;
+    z-index: 3;
+    filter: blur(1px);
+}
+
+.four
+{
+    background-image: url(../assets/images/bird3.svg);
+    animation-delay: 5s;
+    z-index: 13;
+    filter: drop-shadow(0px 0px 3px blue);
+}
+.five
+{
+    background-image: url(../assets/images/bird1.svg);
+    animation-delay: 3s;
+    z-index: -1;
+    height: 60px;
+    width: 60px;
+    background-size: 60px;
+    filter: drop-shadow(0px 0px 3px black);
+}
+.six
+{
+    animation-delay: 4s;
+    z-index: 6;
+    background-size: 25px;
+    filter: drop-shadow(0px 0px 3px black);
+    background-image: url(../assets/images/bird2.svg);
+}
+
+
+
+
+@keyframes fly
+{
+    0%
+    {
+      transform: translateX(0px);
+    }
+    25%
+    {
+       transform: translateX(60px);
+       
+    }
+    50%
+    {
+        transform: translateY(80px);
+        
+    }
+    75%
+    {
+        transform: translateY(-50px);
+        
+    }
+    100%{
+        transform: translateX(20px);
+    }
+
+}
+
+
+
+/******** title top right *********/
+ .title-top
+{
+display: inline-block;
+position: absolute;
+top: -20px;
+right: 20px;
+font-family: 'Amatic SC', cursive;
+}
+.title-top .title{
+    display: block;
+    font-size: 4em;
+    line-height: 1em;
+    letter-spacing:10px;
+}
+.title-top .title>span
+{
+    color: #6593F5;
+}
+
+
+/*******left,right ********/
+.left,.right
+{
+    flex: 1;
+    position: relative;
+}
+/********* navbar ********/
+#navbar
+{
+    display: inline-block;
+    transform: rotateZ(-45deg);
+    left: 365px;
+    position: absolute;
+}
+#navbar ul li
+{
+    list-style-type: none;
+    text-align: center;
+}
+/********** navbar links ***********/
+#navbar ul li a
+{
+    text-decoration: none;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-size: 23px;
+    display: inline-block;
+    margin-bottom: 25px;
+    text-align: center;
+    padding: 2px 5px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #6593F5;
+    transition: all .6s ease-out;
+}
+#navbar ul li a:hover{
+     background-color: black;
+     color: white;
+}
+.active
+{
+    background-color: black!important;
+    color: white!important;
+}
+
+/*********** profile image ************/
+.left #profile-img
+{
+   position: absolute;
+   top: 30%;
+   left: 25%;
+   transform: rotateZ(-45deg);
+    height: 250px;
+    display: flex;
+    
+    width: 250px;
+    border: 2px solid black;
+    background-image: url('../assets/images/profile-photo.JPG');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px black;
+    transition: all .5s ease-out;
+}
+.left #profile-img:hover
+{
+    background-size: 150%;
+    cursor: pointer;
+}
+#profile-img h2
+{
+    color: rgb(31, 21, 21);
+}
+.left .profile-img-text
+{
+    position: absolute;
+    right: 40px;
+    bottom: 60px;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bolder;
+    font-size: 1.2em;
+    text-align: center;
+}
+.profile-img-text::before
+{
+    height: 20px;
+    width: 20px;
+    content: url(../assets/images/arrow-icon2.PNG);
+    position: absolute;
+    top: -100%;
+    left: 20px;
+}
+.right
+{
+    display: flex;
+    margin-top: 150px;
+}
+#hero
+{
+    padding: 0px 50px;
+}
+#hero h2
+{
+    padding: 20px 0px;
+    font-size: 5em;
+    display: inline-block;
+    font-family: 'Amatic SC', cursive;
+    border-top:1px solid black;
+    position: relative; 
+}
+#hero h2::before
+{
+   content: '';
+   position: absolute;
+   top:-4px;
+   left: 0;
+   height: 8px;
+   width: 30%;
+   background-color:black;
+}
+#hello
+{
+    background-color:black;
+    color:#6593F5;
+    letter-spacing: 3px;
+    padding: 0px 5px;
+}
+#hero h1{
+    font-family: 'Poiret One', cursive;
+    border-bottom: 1px solid black;
+    position: relative;
+    padding-bottom: 10px;
+}
+#hero h1::before
+{
+   content: '';
+   position: absolute;
+   bottom:-3px;
+   right: 0px;
+   height: 6px;
+   width: 30%;
+   background-color:black;
+}
+#pranay
+{
+    font-size: 3em;
+    display: block;
+    letter-spacing: 14px;
+}
+#teja-container
+{
+    display: flex;
+    justify-content: center;
+    padding-bottom:5px; 
+    
+}
+.teja
+{
+   
+    text-align: center;
+    align-self: center;
+ 
+}
+.pj
+{
+   
+    color:#6593F5;
+    font-size: 2em;
+}
+.singam
+{
+    flex: 2;
+    color:#6593F5;
+    font-size: 2em;
+}
+/*********** down arrow *******/
+.arrow-down
+{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    width: 50px;
+    background-image: url(../assets/images/down-arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+    cursor: pointer;
+    animation: move 2s ease-in-out infinite alternate-reverse;
+
+}
+@keyframes move
+{
+    0%
+    {
+               
+    }
+    100%
+    {
+ transform: translateX(20px);
+    }
+}
